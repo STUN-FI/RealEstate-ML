@@ -1,4 +1,4 @@
-# RealEstate-ML
+# Estate-ML
 
 ## Overview
 Property search platforms in Nigeria often provide only basic filtering options and lack intelligent recommendation systems. As a result, users are overwhelmed with numerous listings and must manually compare properties.
