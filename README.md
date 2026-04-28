@@ -1,35 +1,41 @@
-# RealEstate-ML
+# EstateML
+### Intelligent Property Recommendation System for Nigeria
 
-## Overview
-Property search platforms in Nigeria often provide only basic filtering options and lack intelligent recommendation systems. As a result, users are overwhelmed with numerous listings and must manually compare properties.
+> Live Demo: https://smartpropertyrecommender.streamlit.app/
 
-RealEstate-ML addresses this problem by leveraging Machine Learning to deliver personalized property recommendations based on user preferences.
+---
 
-## Features
-- Intelligent property recommendation system
-- Personalized search results
-- Data-driven property matching
-- Improved user decision-making experience
+## The Problem
+Nigerian property platforms show thousands of listings with little personalisation, making it harder for users to quickly find suitable homes.
 
-## Live Demo
-Access the application here: https://smartpropertyrecommender.streamlit.app/
+## The Solution
+EstateML uses machine learning to recommend properties based on user preferences such as location, budget, bedrooms, bathrooms, and parking space.
 
-## How It Works
-The system applies Machine Learning techniques to:
-1. Analyze property data such as location, price, and features
-2. Learn user preferences
-3. Recommend properties that best match user needs
+---
 
-## Tech Stack
-- Python
-- Pandas & NumPy (data processing)
-- Scikit-learn (machine learning)
-- SciPy (scientific computing)
-- Streamlit (web application interface)
-- Matplotlib & Seaborn (data visualization)
-- Joblib (model serialization)
+## Screenshots
+Add screenshot of your running Streamlit app here.
 
-## Usage
-1. Visit the live application
-2. Enter your property preferences
-3. Receive personalized recommendations
+---
+
+## Architecture
+Data → Preprocessing → KMeans Clustering → Distance Scoring → Ranked Recommendations → Streamlit UI
+
+---
+
+## Model Evaluation
+- Silhouette Score: To be added after running `evaluate.py`
+- Elbow method used to validate cluster selection
+- Elbow plot: To be added after running `evaluate.py`
+
+---
+
+## Dataset
+Nigeria housing dataset filtered for Lagos and Abuja properties.
+
+---
+
+## How to Run Locally
+```bash
+pip install -r requirements.txt
+streamlit run app.py
