@@ -39,6 +39,28 @@ if st.button("Find Properties"):
     )
 
     if not results.empty:
-        st.dataframe(results)
+        # Match Score
+results['Match Score'] = (
+    1 - (results['distance'] / results['distance'].max())
+) * 100
+results['Match Score'] = results['Match Score'].round(1).astype(str) + '%'
+
+st.dataframe(results)
+
+# Price Distribution Chart
+import matplotlib.pyplot as plt
+
+st.subheader("Price Distribution in Your Recommendation Cluster")
+fig, ax = plt.subplots()
+ax.hist(results['price'], bins=10)
+ax.set_xlabel('Price (₦)')
+ax.set_ylabel('Number of Properties')
+st.pyplot(fig)
+
+# Explanation
+st.info(
+    "These properties were selected because they closely match "
+    "your preferences such as location, budget, and property features."
+)
     else:
         st.warning("No results found.")
