@@ -13,8 +13,8 @@ def load_and_prep_data(filepath="nigeria_houses_data.csv"):
     # Label Encoding for categorical columns
     le_town = LabelEncoder()
     le_state = LabelEncoder()
-    df['town_encoded'] = le_town.fit_init_transform(df['town'])
-    df['state_encoded'] = le_state.fit_init_transform(df['state'])
+    df['town_encoded'] = le_town.fit_transform(df['town'])
+    df['state_encoded'] = le_state.fit_transform(df['state'])
     
     # Price transformation
     df['price_log'] = np.log1p(df['price'])
