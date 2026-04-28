@@ -76,4 +76,12 @@ def recommend_by_cluster(bedrooms, bathrooms, toilets, parking_space,
     result = top[display_cols].copy()
     result['price'] = result['price'].apply(lambda x: f"₦{x:,.0f}")
 
+    cluster_mean = df[df['cluster'] == user_cluster]['price'].mean()
+    cluster_std = df[df['cluster'] == user_cluster]['price'].std()
+
+    results['Price Flag'] = results['price'].apply(
+        lambda p: '⚠️ Overpriced' if p > cluster_mean + 1.5 * cluster_std
+        else '✅ Fair Price'
+    )
+                             
     return result
